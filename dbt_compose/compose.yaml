@@ -1,0 +1,44 @@
+
+services:
+  dbpg: # Nome do nosso servico de banco de dados PostgreSQL
+    image: postgres:13-alpine # Usa uma imagem oficial do PostgreSQL (versao Alpine e menor)
+    environment: # Variaveis de ambiente para configurar o PostgreSQL
+      # Valores fixos para garantir a criação
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persiste os dados do PostgreSQL
+    ports:
+      - "5433:5432" # Mapeia a porta 5432 do container para a 5433 do host
+    networks:
+      - app-network
+
+  dbt:
+    build: ./dbt 
+    depends_on:
+      - dbpg 
+    volumes:
+      - ./dbt/projeto_dbt:/usr/app/dbt/projeto_dbt
+    environment: 
+      - DB_HOST=dbpg 
+      - DB_PORT=5432 
+      - DB_NAME=mydatabase
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_SCHEMA=public
+    command: >
+      sh -c "
+        dbt deps &&
+        dbt seed &&
+        dbt run
+      "
+    networks:
+      - app-network
+
+volumes:
+  postgres_data: # Define um volume nomeado para persistencia dos dados do DB
+
+networks:
+  app-network: # Define uma rede customizada do tipo bridge
+    driver: bridge
