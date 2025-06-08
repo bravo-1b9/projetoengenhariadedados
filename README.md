@@ -1,36 +1,27 @@
-# Engenharia de dados - 2025-1
+# Atividade para avaliação - Engenharia de Dados - 2025-1
 
-# Containers
-## dbt_compose e dbt
+## Alunos do Grupo
+- Domingos Savio Pereira da Costa
+- Jean Marcos Barbosa de Souza
+- João Gabriel Mesquita Vasconcelos
 
-### Nosso container de postgresql
-- app
-    - postgresql
-    - cliente simples
+## Transformações
+### Modelos para criação de tabelas na camada Silver
+- stg_clientes
+- stg_pagamentos
+- stg_pedidos
 
-### Nosso container do dbt
-- dbt
-    - dbt-core
-    - dbt-postgresl
+### Modelos para criação de tabelas na camada Gold
+- clientes
+- pedidos
+- receitas
+- devolucoes
 
-# Estrutura de diretórios e arquivos
-## Arquivos do app
-- app
-    - .env
-    - Dockerfile
-    - requirements.txt
-    - script.py
+### Macros
+- Extração de ano a partir de campos de data (usado nos modelos **receitas** e **devolucoes**)
+- Extração de mês a partir de campos de data (usado nos modelos **receitas** e **devolucoes**)
 
-## Arquivos do dbt
-- dbt_compose
-    - app
-    - dbt
-        - .dbt
-            - profiles.yaml
-    - Dockerfile
 
-## Nossa receita docker compose
-- Compose.yaml
 
 
 
