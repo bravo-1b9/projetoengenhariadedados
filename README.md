@@ -3,7 +3,7 @@
 ## Alunos do Grupo
 - Domingos Savio Pereira da Costa
 - Jean Marcos Barbosa de Souza
-- João Gabriel Mesquita Vasconcelos
+- João Paulo Del Vecchio Lima
 
 ## Transformações
 ### Modelos para criação de tabelas na camada Silver
