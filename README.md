@@ -4,6 +4,7 @@
 - Domingos Savio Pereira da Costa
 - Jean Marcos Barbosa de Souza
 - João Paulo Del Vecchio Lima
+- Juan Giovanne Ribeiro
 
 ## Modelos ##
 ### Camada Bronze ###
