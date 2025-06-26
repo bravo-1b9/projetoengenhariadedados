@@ -5,6 +5,7 @@
 - Jean Marcos Barbosa de Souza
 - João Paulo Del Vecchio Lima
 - Juan Giovanne Ribeiro
+-  Luiz Henrique Gomes Nogueira
 
 ## Modelos ##
 ### Camada Bronze ###
